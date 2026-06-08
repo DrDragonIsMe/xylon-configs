@@ -1,0 +1,120 @@
+# Yazi Config — Gruvbox Dark Optimized
+# https://yazi-rs.github.io/docs/configuration/yazi
+# Version: 2.0
+
+# ─── Manager ─────────────────────────────────────
+[manager]
+# Show hidden files by default
+show_hidden = true
+# Sort by modification time, descending
+sort_by = "mtime"
+sort_dir_first = true
+sort_reverse = true
+sort_sensitive = false
+# Use Unicode icons (requires Nerd Font)
+linemode = "size"
+# Mouse support
+mouse = true
+# Show file count for directories
+show_symlink = true
+
+# ─── Preview ─────────────────────────────────────
+[preview]
+# Maximum preview file size (bytes)
+max_size = 209715200  # 200 MB
+# Tab size for preview
+tab_size = 4
+# Show image previews (requires supported terminal)
+image_filter = "nearest"
+image_quality = 75
+# Wrap text in preview
+wrap = "no"
+# Cache directory
+cache_dir = ""
+
+# ─── Opener ──────────────────────────────────────
+[opener]
+# Use xdg-open / open as the default opener
+open = [
+	{ run = 'xdg-open "$1"', desc = "Open", for = "unix" },
+	{ run = 'open "$1"',     desc = "Open", for = "macos" },
+]
+edit = [
+	{ run = 'nvim "$1"',  desc = "Edit (nvim)", block = true },
+	{ run = 'vim "$1"',   desc = "Edit (vim)", block = true },
+	{ run = 'nano "$1"',  desc = "Edit (nano)", block = true },
+]
+reveal = [
+	{ run = 'open -R "$1"', desc = "Reveal", for = "macos" },
+	{ run = 'xdg-open "$(dirname "$1")"', desc = "Reveal", for = "unix" },
+]
+play = [
+	{ run = 'mpv "$1"', desc = "Play (mpv)", orphan = true },
+	{ run = 'vlc "$1"', desc = "Play (vlc)", orphan = true },
+]
+
+# ─── Open Rules ──────────────────────────────────
+[open]
+# Rules for opening files
+rules = [
+	{ name = "*/", use = [ "open", "reveal" ] },
+	{ mime = "text/*",  use = [ "edit", "open" ] },
+	{ mime = "image/*", use = [ "open", "reveal" ] },
+	{ mime = "video/*", use = [ "open", "play", "reveal" ] },
+	{ mime = "audio/*", use = [ "open", "play", "reveal" ] },
+	{ mime = "application/pdf", use = [ "open" ] },
+	{ mime = "application/json", use = [ "edit", "open" ] },
+	{ mime = "application/javascript", use = [ "edit", "open" ] },
+	{ mime = "application/xml", use = [ "edit", "open" ] },
+	{ mime = "inode/x-empty", use = [ "edit", "open" ] },
+	{ mime = "*", use = [ "open", "reveal" ] },
+]
+
+# ─── Tasks ───────────────────────────────────────
+[tasks]
+# Micro-animations (disable for speed)
+micro_workers = 5
+macro_workers = 10
+bizarre_retry = 3
+
+# ─── Input ───────────────────────────────────────
+[input]
+# Cursor blink
+cursor_blink = false
+
+# ─── Confirm ─────────────────────────────────────
+[confirm]
+# Confirm on trash
+trash = 1
+# Confirm on delete (permanently)
+delete = 1
+# Confirm on quit with running tasks
+quit = 1
+
+# ─── Pick ────────────────────────────────────────
+[pick]
+# Open file picker immediately
+open = 1
+# Save file picker immediately
+save = 0
+
+# ─── Which ───────────────────────────────────────
+[which]
+# Sort by key
+sort_by = "none"
+# Sort in reverse
+sort_reverse = false
+# Sort with sensitivity
+sort_sensitive = false
+
+# ─── Log ─────────────────────────────────────────
+[log]
+# Enable logging
+enabled = false
+
+# ─── Plugin ──────────────────────────────────────
+[plugin]
+# Preview markdown files with glow
+prepend_previewers = [
+  { name = "*.md", run = "glow" },
+]

@@ -1,0 +1,10 @@
+  Host 106.54.202.125
+    HostName 106.54.202.125
+    User root
+    ForwardAgent yes
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github_ed25519
+    IdentitiesOnly yes

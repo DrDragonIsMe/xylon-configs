@@ -1,0 +1,136 @@
+# Ghostty Config — Gruvbox Dark + XL Mono
+# https://ghostty.org/docs/config
+# Version: 2.0
+
+# ─── Font ────────────────────────────────────────
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 16
+font-thicken = false
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+# ─── Theme: Gruvbox Dark ─────────────────────────
+background = 282828
+foreground = ebdbb2
+cursor-color = fabd2f
+cursor-text = 282828
+selection-background = 458588
+selection-foreground = 282828
+
+# ANSI 16-color palette
+palette = 0=282828
+palette = 1=cc241d
+palette = 2=98971a
+palette = 3=d79921
+palette = 4=458588
+palette = 5=b16286
+palette = 6=689d6a
+palette = 7=a89984
+palette = 8=928374
+palette = 9=fb4934
+palette = 10=b8bb26
+palette = 11=fabd2f
+palette = 12=83a598
+palette = 13=d3869b
+palette = 14=8ec07c
+palette = 15=ebdbb2
+
+# ─── Window ──────────────────────────────────────
+window-decoration = true
+window-save-state = always
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+window-inherit-working-directory = true
+window-theme = ghostty
+
+# Window size (cols x rows)
+# window-width = 120
+# window-height = 35
+
+# ─── Performance ─────────────────────────────────
+gtk-single-instance = true
+quit-after-last-window-closed = false
+
+# ─── Scrollback ──────────────────────────────────
+scrollback-limit = 1000000
+
+# ─── Cursor ──────────────────────────────────────
+cursor-style = bar
+cursor-style-blink = false
+cursor-click-to-move = true
+
+# ─── Mouse ───────────────────────────────────────
+mouse-scroll-multiplier = 3
+mouse-hide-while-typing = true
+
+# ─── Clipboard ───────────────────────────────────
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+
+# ─── Shell Integration ───────────────────────────
+shell-integration = detect
+shell-integration-features = cursor,sudo,title
+
+# ─── Keybinds: Clipboard ─────────────────────────
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+shift+o=open_config
+keybind = ctrl+shift+r=reload_config
+
+# ─── Keybinds: Pane splits (match iTerm2) ────────
+# Cmd+D  = Split Vertically  → two panes side-by-side (左右分屏)
+# Cmd+Shift+D = Split Horizontally → two panes stacked (上下分屏)
+keybind = command+d=new_split:right
+keybind = command+shift+d=new_split:down
+
+# ─── Keybinds: Pane navigation (vim-style) ───────
+keybind = command+h=goto_split:left
+keybind = command+j=goto_split:bottom
+keybind = command+k=goto_split:top
+keybind = command+l=goto_split:right
+
+# ─── Keybinds: Pane zoom / close ─────────────────
+keybind = command+z=toggle_split_zoom
+keybind = command+w=close_surface
+
+# ─── Keybinds: Tab management ────────────────────
+keybind = command+t=new_tab
+keybind = command+shift+w=close_tab
+keybind = command+shift+]=next_tab
+keybind = command+shift+[=previous_tab
+keybind = command+1=goto_tab:1
+keybind = command+2=goto_tab:2
+keybind = command+3=goto_tab:3
+keybind = command+4=goto_tab:4
+keybind = command+5=goto_tab:5
+keybind = command+6=goto_tab:6
+keybind = command+7=goto_tab:7
+keybind = command+8=goto_tab:8
+keybind = command+9=goto_tab:9
+
+# ─── Keybinds: Font size ─────────────────────────
+keybind = command+equal=increase_font_size:1
+keybind = command+minus=decrease_font_size:1
+keybind = command+0=reset_font_size
+
+# ─── Keybinds: Quick Terminal ────────────────────
+# F12 or Cmd+` to toggle quick terminal (visor mode)
+keybind = f12=toggle_quick_terminal
+keybind = command+grave_accent=toggle_quick_terminal
+quick-terminal-position = bottom
+quick-terminal-screen = main
+quick-terminal-animation-duration = 0.15
+
+# ─── Keybinds: Toggle fullscreen ─────────────────
+keybind = command+ctrl+f=toggle_fullscreen
+
+# ─── Keybinds: Show all windows ──────────────────
+# keybind = command+shift+a=toggle_visibility
+
+# ─── macOS specific ─────────────────────────────-
+macos-option-as-alt = true
+macos-titlebar-style = tabs
+macos-window-shadow = true

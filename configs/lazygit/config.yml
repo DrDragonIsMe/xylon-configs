@@ -1,0 +1,240 @@
+# Lazygit Config — Gruvbox Dark
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+# Version: 2.0
+
+gui:
+  # Disable animations for speed
+  scrollHeight: 2
+  scrollPastBottom: true
+  mouseEvents: true
+  sidePanelWidth: 0.3333
+  expandFocusedSidePanel: false
+  skipDiscardChangeWarning: false
+  skipStashWarning: false
+  showIcons: true
+  showFileTree: true
+  showRandomTip: false
+  showBranchCommitHash: true
+  showDivergenceFromBaseBranch: arrowAndNumber
+  commandLogSize: 8
+  # Nerd font icons
+  nerdFontsVersion: "3"
+  # Show panel jump labels (press number to jump)
+  statusPanelView: dashboard
+  commitLength:
+    show: true
+  # Gruvbox Dark colors
+  theme:
+    activeBorderColor:
+      - "#fabd2f"
+      - "bold"
+    inactiveBorderColor:
+      - "#a89984"
+    optionsTextColor:
+      - "#458588"
+    selectedLineBgColor:
+      - "#3c3836"
+    selectedRangeBgColor:
+      - "#3c3836"
+    cherryPickedCommitBgColor:
+      - "#b16286"
+    cherryPickedCommitFgColor:
+      - "#282828"
+    unstagedChangesColor:
+      - "#fb4934"
+    defaultFgColor:
+      - "#ebdbb2"
+    searchingActiveBorderColor:
+      - "#d79921"
+      - "bold"
+
+os:
+  editPreset: "nvim"
+  openDirInEditor: "nvim"
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never --line-numbers
+  commit:
+    signOff: false
+    autoWrapCommitMessage: true
+    autoWrapWidth: 72
+  merging:
+    manualCommit: false
+    args: ""
+  log:
+    order: topo-order
+    showGraph: always
+    showWholeGraph: false
+  skipHookPrefix: WIP
+  autoFetch: true
+  autoRefresh: true
+  branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
+  allBranchesLogCmd: git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=medium
+  overrideGpg: false
+  disableForcePushing: false
+  parseEmoji: false
+  truncateCopiedCommitHashesTo: 12
+
+update:
+  method: never
+  days: 14
+
+confirmOnQuit: false
+
+# Keybindings — vim-style optimized
+keybinding:
+  universal:
+    quit: q
+    quit-alt1: <c-c>
+    return: <esc>
+    quitWithoutChangingDirectory: Q
+    togglePanel: <tab>
+    prevItem: <up>
+    nextItem: <down>
+    prevPage: <left>
+    nextPage: <right>
+    scrollUpMain: <pgup>
+    scrollDownMain: <pgdown>
+    scrollUpMain-alt1: K
+    scrollDownMain-alt1: J
+    scrollUpMain-alt2: <c-u>
+    scrollDownMain-alt2: <c-d>
+    executeCustomCommand: :
+    createRebaseOptionsMenu: m
+    pushFiles: P
+    pullFiles: p
+    refresh: R
+    createPatchOptionsMenu: <c-p>
+    nextTab: ]
+    prevTab: [
+    nextScreenMode: <f>
+    prevScreenMode: <f>
+    undo: z
+    redo: <c-z>
+    filteringMenu: <c-s>
+    diffingMenu: W
+    diffingMenu-alt: <c-e>
+    copyToClipboard: <c-o>
+    openRecentRepos: <c-r>
+    confirm: <enter>
+    confirm-alt1: y
+    remove: d
+    new: n
+    edit: e
+    openFile: o
+    scrollUp: <pgup>
+    scrollDown: <pgdown>
+    executeShellCommand: <c-p>
+    toggleWhitespaceInDiffView: <c-w>
+    increaseContextInDiffView: "}"
+    decreaseContextInDiffView: "{"
+    # Custom: open with editor
+    openDirWithEditor: <c-e>
+
+  status:
+    checkForUpdate: u
+    recentRepos: <enter>
+    allBranchesLogGraph: a
+
+  files:
+    # Stage / Unstage
+    toggleStaged: <space>
+    toggleStagedAll: a
+    # Staging
+    stageSelection: v
+    unstageSelection: V
+    # Discarding
+    discardChange: d
+    discardAllChanges: D
+    # File actions
+    ignoreFile: i
+    refreshFiles: r
+    stashAllChanges: s
+    viewStashOptions: S
+    toggleTreeView: <c-t>
+    openMergeTool: M
+    # Custom: open external diff
+    openExternalDiffTool: <c-d>
+
+  branches:
+    # Navigation
+    checkoutBranchByName: c
+    createPullRequest: o
+    copyPullRequestURL: <c-y>
+    viewPullRequestOptions: O
+    createNewBranchWithPullRequest: n
+    forceCheckoutBranch: F
+    rebaseBranch: r
+    renameBranch: R
+    mergeIntoCurrentBranch: M
+    viewGitFlowOptions: g
+    fastForward: f
+    # Push / Pull
+    pushTag: P
+    setUpstream: u
+    fetchRemote: f
+
+  commits:
+    # Squash / Fixup
+    squashDown: s
+    renameCommit: r
+    renameCommitWithEditor: R
+    # Navigation / inspection
+    viewResetOptions: g
+    markCommitAsFixup: f
+    createFixupCommit: F
+    moveDown: <down>
+    moveUp: <up>
+    amendToCommit: A
+    pickCommit: p
+    revertCommit: t
+    cherryPickCopy: c
+    cherryPickCopyRange: C
+    pasteCommits: v
+    markAsBaseCommit: <space>
+    tagCommit: T
+    # Reset / Rebase
+    resetCherryPick: <c-r>
+    copyCommitAttributeToClipboard: <c-o>
+    openLogMenu: <c-l>
+    viewBisectOptions: b
+
+  stash:
+    popStash: <space>
+    renameStash: r
+
+  commitFiles:
+    checkoutCommitFile: c
+
+  submodules:
+    init: i
+    update: u
+    bulkMenu: b
+
+  commitMessage:
+    commitMenu: <c-o>
+    switchToEditor: <c-e>
+
+customCommands:
+  - key: "b"
+    description: "Create fixup commit for current changes"
+    context: "files"
+    command: "git commit --fixup HEAD"
+    subprocess: true
+  - key: "B"
+    description: "Create fixup commit for selected commit"
+    context: "commits"
+    command: "git commit --fixup {{ .SelectedLocalCommit.Sha }}"
+    subprocess: true
+  - key: "F"
+    description: "Auto-squash fixup commits"
+    context: "commits"
+    command: "git rebase -i --autosquash HEAD~{{ .SelectedLocalCommit.Index }}"
+    subprocess: true
+  - key: "L"
+    description: "View reflog"
+    context: "localBranches"
+    command: "git reflog"
+    subprocess: true

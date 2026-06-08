@@ -1,0 +1,150 @@
+# Yazi Theme — Gruvbox Dark
+# https://yazi-rs.github.io/docs/configuration/theme
+# Version: 2.0
+
+# ─── Manager ─────────────────────────────────────
+[manager]
+# Border color for focused pane
+cwd = { fg = "#fabd2f", bold = true }
+
+# Hovered file style
+hovered = { fg = "#ebdbb2", bg = "#3c3836", bold = true }
+preview_hovered = { fg = "#ebdbb2", bg = "#3c3836", underline = true }
+
+# Find highlight
+find_keyword = { fg = "#282828", bg = "#fabd2f", bold = true }
+find_position = { fg = "#fabd2f", bg = "#282828", bold = true }
+
+# Marker colors
+marker_selected = { fg = "#b8bb26", bg = "#b8bb26" }
+marker_copied = { fg = "#d79921", bg = "#d79921" }
+marker_cut = { fg = "#fb4934", bg = "#fb4934" }
+
+# Tab styles
+tab_active = { fg = "#282828", bg = "#fabd2f", bold = true }
+tab_inactive = { fg = "#a89984", bg = "#282828" }
+tab_width = 1
+
+# Count styles
+count_selected = { fg = "#282828", bg = "#b8bb26", bold = true }
+count_copied = { fg = "#282828", bg = "#d79921", bold = true }
+count_cut = { fg = "#282828", bg = "#fb4934", bold = true }
+
+# Border style
+border_symbol = "│"
+border_style = { fg = "#504945" }
+
+# ─── Mode ────────────────────────────────────────
+[mode]
+normal = { fg = "#282828", bg = "#458588", bold = true }
+select = { fg = "#282828", bg = "#d79921", bold = true }
+unset = { fg = "#282828", bg = "#cc241d", bold = true }
+
+# ─── Status ──────────────────────────────────────
+[status]
+# Overall separator style
+separator_open = { fg = "#504945", bg = "#504945" }
+separator_close = { fg = "#504945", bg = "#504945" }
+
+# Progress style
+progress_label = { fg = "#ebdbb2", bold = true }
+progress_normal = { fg = "#458588", bg = "#3c3836" }
+progress_error = { fg = "#fb4934", bg = "#3c3836" }
+
+# Permissions
+permissions_t = { fg = "#b8bb26" }
+permissions_r = { fg = "#d79921" }
+permissions_w = { fg = "#fb4934" }
+permissions_x = { fg = "#458588" }
+permissions_s = { fg = "#928374" }
+
+# ─── Input ───────────────────────────────────────
+[input]
+border = { fg = "#fabd2f" }
+title = { fg = "#ebdbb2", bold = true }
+value = { fg = "#ebdbb2" }
+selected = { fg = "#282828", bg = "#458588" }
+
+# ─── Select ──────────────────────────────────────
+[select]
+border = { fg = "#fabd2f" }
+active = { fg = "#ebdbb2", bold = true }
+inactive = { fg = "#a89984" }
+
+# ─── Tasks ───────────────────────────────────────
+[tasks]
+border = { fg = "#fabd2f" }
+title = { fg = "#ebdbb2", bold = true }
+hovered = { fg = "#ebdbb2", bg = "#3c3836", underline = true }
+
+# ─── Which ───────────────────────────────────────
+[which]
+mask = { bg = "#3c3836" }
+cand = { fg = "#83a598" }
+rest = { fg = "#928374" }
+desc = { fg = "#d3869b" }
+separator = "  "
+separator_style = { fg = "#504945" }
+
+# ─── Help ────────────────────────────────────────
+[help]
+on = { fg = "#83a598" }
+run = { fg = "#d3869b" }
+hovered = { fg = "#ebdbb2", bg = "#3c3836", bold = true }
+footer = { fg = "#a89984", bg = "#3c3836" }
+
+# ─── Filetype Icons / Styles ─────────────────────
+[filetype]
+rules = [
+	# Images
+	{ mime = "image/*", fg = "#d3869b" },
+	# Videos
+	{ mime = "video/*", fg = "#b8bb26" },
+	# Audio
+	{ mime = "audio/*", fg = "#fabd2f" },
+	# Archives
+	{ mime = "application/zip", fg = "#d79921" },
+	{ mime = "application/gzip", fg = "#d79921" },
+	{ mime = "application/x-tar", fg = "#d79921" },
+	{ mime = "application/x-bzip2", fg = "#d79921" },
+	{ mime = "application/x-7z-compressed", fg = "#d79921" },
+	{ mime = "application/x-rar", fg = "#d79921" },
+	{ mime = "application/xz", fg = "#d79921" },
+	# Documents
+	{ mime = "application/pdf", fg = "#fb4934" },
+	{ mime = "application/rtf", fg = "#83a598" },
+	{ mime = "application/msword", fg = "#83a598" },
+	# Markup / Data
+	{ mime = "text/html", fg = "#fb4934" },
+	{ mime = "text/xml", fg = "#fb4934" },
+	{ mime = "application/json", fg = "#fabd2f" },
+	# Code
+	{ mime = "text/css", fg = "#83a598" },
+	{ mime = "text/javascript", fg = "#fabd2f" },
+	{ mime = "application/javascript", fg = "#fabd2f" },
+	{ mime = "text/x-python", fg = "#d79921" },
+	{ mime = "text/x-go", fg = "#83a598" },
+	{ mime = "text/x-rust", fg = "#fabd2f" },
+	{ mime = "text/x-c", fg = "#83a598" },
+	{ mime = "text/x-cpp", fg = "#83a598" },
+	{ mime = "text/x-java", fg = "#fb4934" },
+	{ mime = "text/x-shellscript", fg = "#b8bb26" },
+	{ mime = "text/x-makefile", fg = "#a89984" },
+	{ mime = "text/x-dockerfile", fg = "#458588" },
+	# Executable
+	{ mime = "application/x-executable", fg = "#b8bb26", bold = true },
+	{ mime = "application/x-pie-executable", fg = "#b8bb26", bold = true },
+	{ mime = "application/x-shellscript", fg = "#b8bb26", bold = true },
+	# Directories
+	{ name = "*/", fg = "#458588", bold = true },
+	# Symlinks
+	{ name = "*", is = "link", fg = "#83a598", underline = true },
+	# Hidden files
+	{ name = ".*", is = "hidden", fg = "#928374" },
+	# Default
+	{ name = "*", fg = "#ebdbb2" },
+]
+
+# ─── Icon definitions (if using icon theme) ──────
+# [icon]
+# (leave empty to use default icon theme)

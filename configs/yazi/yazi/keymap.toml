@@ -1,0 +1,133 @@
+# Yazi Keymap — Gruvbox Dark Optimized
+# https://yazi-rs.github.io/docs/configuration/keymap
+# Version: 2.0
+
+# ─── Manager Keys ────────────────────────────────
+[[manager.prepend_keymap]]
+# Open in new tab
+on = [ "T" ]
+run = "tab_create --current"
+desc = "Open current directory in a new tab"
+
+[[manager.prepend_keymap]]
+# Close current tab
+on = [ "X" ]
+run = "tab_close"
+desc = "Close current tab"
+
+[[manager.prepend_keymap]]
+# Toggle all selection
+on = [ "U" ]
+run = "toggle_all --state=true"
+desc = "Select all files"
+
+[[manager.prepend_keymap]]
+# Deselect all
+on = [ "u", "a" ]
+run = "toggle_all --state=false"
+desc = "Deselect all files"
+
+[[manager.prepend_keymap]]
+# Smart enter: enter directory or open file
+on = [ "l" ]
+run = "plugin smart-enter"
+desc = "Enter the directory or open the file"
+
+[[manager.prepend_keymap]]
+# Fast travel: cd to common directories
+on = [ "g", "h" ]
+run = "cd ~"
+desc = "Go to home directory"
+
+[[manager.prepend_keymap]]
+# Go to config directory
+on = [ "g", "c" ]
+run = "cd ~/.config"
+desc = "Go to config directory"
+
+[[manager.prepend_keymap]]
+# Go to downloads
+on = [ "g", "d" ]
+run = "cd ~/Downloads"
+desc = "Go to Downloads"
+
+[[manager.prepend_keymap]]
+# Go to workspace/projects
+on = [ "g", "w" ]
+run = "cd ~/workspace"
+desc = "Go to workspace"
+
+[[manager.prepend_keymap]]
+# Filter files
+on = [ "f", "f" ]
+run = "filter --smart"
+desc = "Filter files"
+
+[[manager.prepend_keymap]]
+# Find files (fzf style)
+on = [ "f", "z" ]
+run = '''
+    shell 'zi' --confirm
+'''
+desc = "Jump with zoxide"
+
+[[manager.prepend_keymap]]
+# Search with fd + fzf
+on = [ "f", "g" ]
+run = '''
+    shell 'rg --color=never --files | fzf --preview "cat {}" --bind "enter:execute(nvim {})"' --block
+'''
+desc = "Search files with fzf"
+
+[[manager.prepend_keymap]]
+# Sort by name
+on = [ ",", "n" ]
+run = "sort name --dir-first"
+desc = "Sort by name"
+
+[[manager.prepend_keymap]]
+# Sort by modified time
+on = [ ",", "m" ]
+run = "sort mtime --reverse --dir-first"
+desc = "Sort by modified time"
+
+[[manager.prepend_keymap]]
+# Sort by size
+on = [ ",", "s" ]
+run = "sort size --reverse --dir-first"
+desc = "Sort by size"
+
+[[manager.prepend_keymap]]
+# Flatten directory view
+on = [ "z" ]
+run = "plugin flatten"
+desc = "Flatten directory"
+
+[[manager.prepend_keymap]]
+# Diff two selected files
+on = [ "d", "d" ]
+run = "plugin diff"
+desc = "Diff selected files"
+
+[[manager.prepend_keymap]]
+# Show help
+on = [ "?" ]
+run = "help"
+desc = "Show help"
+
+# ─── Input Keys ──────────────────────────────────
+# (Use defaults mostly)
+
+# ─── Completion Keys ─────────────────────────────
+# (Use defaults mostly)
+
+# ─── Preview Scroll (glow.yazi) ──────────────────
+[[manager.prepend_keymap]]
+on = [ "<C-e>" ]
+run = "seek 5"
+desc = "Scroll preview down"
+
+[[manager.prepend_keymap]]
+on = [ "<C-y>" ]
+run = "seek -5"
+desc = "Scroll preview up"
