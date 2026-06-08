@@ -1,0 +1,13 @@
+[project]
+name = "xylon"
+version = "0.1.0"
+description = "跨平台 CLI 配置备份与还原工具"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "xylon"},
+]
+
+[project.scripts]
+xylon = "xylon.cli:main"
